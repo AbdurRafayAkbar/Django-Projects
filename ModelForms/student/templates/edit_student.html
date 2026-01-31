@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Edit Student</title>
+  </head>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #1f4037, #99f2c8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Edit Form Card */
+form {
+    background: rgba(255, 255, 255, 0.18);
+    backdrop-filter: blur(14px);
+    padding: 35px;
+    width: 400px;
+    border-radius: 18px;
+    box-shadow: 0 20px 45px rgba(0,0,0,0.35);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+/* Card Hover */
+form:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 30px 55px rgba(0,0,0,0.5);
+}
+
+/* Heading */
+h2 {
+    position: absolute;
+    top: 80px;
+    text-align: center;
+    color: white;
+    letter-spacing: 1px;
+    font-weight: 600;
+}
+
+/* Inputs */
+input, select, textarea {
+    width: 100%;
+    padding: 10px 12px;
+    margin-bottom: 15px;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+    background: rgba(255,255,255,0.9);
+    transition: all 0.3s ease;
+}
+
+/* Focus Effect */
+input:focus, select:focus, textarea:focus {
+    box-shadow: 0 0 0 3px rgba(31, 64, 55, 0.6);
+}
+
+/* Update Button */
+button {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 30px;
+    background: linear-gradient(135deg, #11998e, #38ef7d);
+    color: white;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.4s ease;
+}
+
+/* Button Hover */
+button:hover {
+    transform: scale(1.07);
+    box-shadow: 0 12px 30px rgba(56,239,125,0.6);
+}
+
+  </style>
+  <body>
+    <h2>Edit Student</h2>
+
+    <form method="POST">
+      {% csrf_token %} {{ form.as_p }}
+      <button type="submit">Update Student</button>
+    </form>
+  </body>
+</html>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add_student</title>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #141E30, #243B55);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+/* Card */
+.student-card {
+    background: rgba(255, 255, 255, 0.12);
+    backdrop-filter: blur(12px);
+    padding: 35px;
+    width: 380px;
+    border-radius: 18px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+    text-align: center;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+/* Hover Effect */
+.student-card:hover {
+    transform: translateY(-10px) scale(1.03);
+    box-shadow: 0 30px 55px rgba(0,0,0,0.6);
+}
+
+/* Heading */
+.student-card h2 {
+    margin-bottom: 25px;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+/* Info Text */
+.student-card p {
+    background: rgba(255, 255, 255, 0.15);
+    padding: 12px;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    font-size: 15px;
+    transition: background 0.3s ease;
+}
+
+/* Hover on info */
+.student-card p:hover {
+    background: rgba(255, 255, 255, 0.25);
+}
+
+/* Add Button */
+.student-card a {
+    display: flex;
+    margin-top: 20px;
+    padding: 12px 30px;
+    text-decoration: none;
+    border-radius: 30px;
+    background: linear-gradient(135deg, #00c6ff, #0072ff);
+    color: white;
+    font-weight: 600;
+    transition: all 0.4s ease;
+}
+
+/* Button Hover */
+.student-card a:hover {
+    transform: scale(1.08);
+    box-shadow: 0 10px 25px rgba(0, 114, 255, 0.7);
+}
+
+</style>
+</head>
+<body>
+    <div class="student-card">
+        <h2>Student Details</h2>
+
+        <p><strong>Name:</strong> {{ single_student.name }}</p>
+        <p><strong>Age:</strong> {{ single_student.age }}</p>
+        <p><strong>Email:</strong> {{ single_student.email }}</p>
+
+        <a href="{% url 'student_create' %}">➕ Add Student</a>
+    </div>
+</body>
+</html>

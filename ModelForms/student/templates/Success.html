@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student ADDEED</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #11998e, #38ef7d);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+/* Success Card */
+.success-card {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(12px);
+    padding: 40px;
+    width: 380px;
+    border-radius: 18px;
+    text-align: center;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+    animation: popIn 0.6s ease;
+}
+
+/* Animation */
+@keyframes popIn {
+    0% {
+        transform: scale(0.7);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* Heading */
+.success-card h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    letter-spacing: 1px;
+}
+
+/* Check Icon */
+.success-icon {
+    font-size: 60px;
+    margin-bottom: 15px;
+}
+
+/* Button */
+.success-card a {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 12px 30px;
+    text-decoration: none;
+    border-radius: 30px;
+    background: linear-gradient(135deg, #ffffff, #e0e0e0);
+    color: #11998e;
+    font-weight: 600;
+    transition: all 0.4s ease;
+}
+
+/* Button Hover */
+.success-card a:hover {
+    transform: scale(1.1);
+    box-shadow: 0 10px 25px rgba(255,255,255,0.6);
+}
+
+    </style>
+</head>
+<body><body>
+    <div class="success-card">
+        <div class="success-icon">✅</div>
+        <h2>Student Added Successfully!</h2>
+        <a href="/add">➕ Add Another Student</a>
+    </div>
+</body>
+
+</body>
+</html>

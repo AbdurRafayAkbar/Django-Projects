@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pagination</title>
+
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #f4f6f8;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 40px auto;
+            background: #ffffff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+
+        .post {
+            padding: 15px 0;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .post:last-child {
+            border-bottom: none;
+        }
+
+        .post h2 {
+            margin: 0;
+            color: #333;
+        }
+
+        .pagination {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 25px;
+        }
+
+        .pagination a {
+            text-decoration: none;
+            background: #007bff;
+            color: white;
+            padding: 8px 15px;
+            border-radius: 6px;
+            font-size: 14px;
+            transition: background 0.3s ease;
+        }
+
+        .pagination a:hover {
+            background: #0056b3;
+        }
+
+        .page-info {
+            font-size: 14px;
+            color: #555;
+        }
+
+        @media (max-width: 600px) {
+            .pagination {
+                flex-direction: column;
+                gap: 10px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        {% for post in page_obj %}
+            <div class="post">
+                <h2>{{ post.title }}</h2>
+            </div>
+        {% endfor %}
+
+        <div class="pagination">
+
+            {% if page_obj.has_previous %}
+                <a href="?page={{ page_obj.previous_page_number }}">← Previous</a>
+            {% endif %}
+
+            <div class="page-info">
+                Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}
+            </div>
+
+            {% if page_obj.has_next %}
+                <a href="?page={{ page_obj.next_page_number }}">Next →</a>
+            {% endif %}
+
+        </div>
+
+    </div>
+
+</body>
+</html>
