@@ -1,0 +1,39 @@
+body {
+    font-family: Arial, sans-serif;
+    transition: 0.3s;
+}
+
+.container {
+    text-align: center;
+    margin-top: 100px;
+}
+
+.btn {
+    padding: 10px 20px;
+    margin: 10px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+/* Light Theme */
+body.light {
+    background-color: #ffffff;
+    color: #000000;
+}
+
+body.light .btn {
+    background-color: #000000;
+    color: white;
+}
+
+/* Dark Theme */
+body.dark {
+    background-color: #121212;
+    color: #ffffff;
+}
+
+body.dark .btn {
+    background-color: #ffffff;
+    color: black;
+}

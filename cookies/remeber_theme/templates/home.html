@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Django Dark Mode</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+
+<body class="{{ theme }}">
+    <div class="container">
+        <h1>Django Dark Mode Theme 🌙</h1>
+        <p>Current Theme: <b>{{ theme|title }}</b></p>
+
+        <a href="/dark/" class="btn">Dark Mode</a>
+        <a href="/light/" class="btn">Light Mode</a>
+    </div>
+</body>
+</html>
