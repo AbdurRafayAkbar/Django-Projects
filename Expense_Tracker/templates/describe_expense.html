@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="card">
+    <h1>Expense Detail</h1>
+
+    <p><strong>Title:</strong> {{ expense.Title }}</p>
+    <p><strong>Amount:</strong> Rs {{ expense.Amount }}</p>
+    <p><strong>Category:</strong> {{ expense.Category }}</p>
+    <p><strong>Date:</strong> {{ expense.Date }}</p>
+    <p><strong>Description:</strong> {{ expense.Description }}</p>
+
+    <br>
+    <a href="{% url 'all_expenses' %}">
+        <button class="btn-primary">Back</button>
+    </a>
+
+</div>
+
+{% endblock %}

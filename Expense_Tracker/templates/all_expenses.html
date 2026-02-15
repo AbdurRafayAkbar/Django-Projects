@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="card">
+    <h1>All Expenses</h1>
+
+    <table>
+        <tr>
+            <th>Title</th>
+            <th>Amount</th>
+            <th>Category</th>
+            <th>Date</th>
+            <th>Actions</th>
+        </tr>
+
+        {% for expense in expenses %}
+        <tr>
+            <td>{{ expense.Title }}</td>
+            <td>Rs {{ expense.Amount }}</td>
+            <td>{{ expense.Category }}</td>
+            <td>{{ expense.Date }}</td>
+            <td>
+                <a href="{% url 'describe_expense' expense.id %}">
+                    <button class="btn-primary">View</button>
+                </a>
+
+                <a href="{% url 'update_expense' expense.id %}">
+                    <button class="btn-warning">Edit</button>
+                </a>
+
+                <a href="{% url 'delete_expense' expense.id %}">
+                    <button class="btn-danger">Delete</button>
+                </a>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+
+</div>
+
+{% endblock %}
